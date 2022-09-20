@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GroupBoxLayout">
+        <attr name="labelText" format="string" />
+        <attr name="labelTextColor" format="color" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelStyle" format="reference" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderCornerRadius" format="dimension" />
+        <attr name="borderStrokeWidth" format="dimension" />
+    </declare-styleable>
+</resources>
