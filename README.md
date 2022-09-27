@@ -4,9 +4,9 @@
 [![API](https://img.shields.io/badge/API-17%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=17)
 [![Jitpack](https://jitpack.io/v/homayoonahmadi/GroupBoxLayout.svg)](https://jitpack.io/#homayoonahmadi/GroupBoxLayout)
 
-![Preview 1](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/01.jpg)
-![Preview 2](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/02.jpg)
-![Preview 3](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/03.jpg)
+![Preview 1](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/01.jpg | width=100)
+![Preview 2](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/02.jpg | width=100)
+![Preview 3](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/03.jpg | width=100)
 
 # How to add dependency:
 
