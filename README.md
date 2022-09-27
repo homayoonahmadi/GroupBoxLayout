@@ -36,7 +36,7 @@ dependencies {
 # How to use
 
 + **In XML:**
-+ 
+
 ```xml
 <ir.programmerplus.groupbox.GroupBoxLayout
     android:layout_width="match_parent"
