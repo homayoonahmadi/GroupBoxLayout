@@ -4,6 +4,10 @@
 [![API](https://img.shields.io/badge/API-17%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=17)
 [![Jitpack](https://jitpack.io/v/homayoonahmadi/GroupBoxLayout.svg)](https://jitpack.io/#homayoonahmadi/GroupBoxLayout)
 
+GroupBoxLayout is a container layout that has a title label and draws a rounded border over the parent view. 
+It supports rtl and ltr directions, prevents label text overflow, and is compatible with background color/drawable, 
+because it doesn't use white or other color backgrounds for hiding border under label. 
+
 ![Preview 1](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/01.jpg)
 ![Preview 2](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/02.jpg)
 ![Preview 3](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/03.jpg)
@@ -30,11 +34,14 @@ dependencies {
 
 # How to use
 
++ **In XML:**
++ 
 ```xml
 <ir.programmerplus.groupbox.GroupBoxLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:layoutDirection="ltr"
     android:padding="30dp"
     app:borderColor="@color/teal_700"
     app:borderCornerRadius="8dp"
@@ -61,6 +68,9 @@ You can customize label text using styles:
     ...
 </style>
 ```
+
+
++ **In Code:**
 
 You can also add layout programmatically to your view like this:
 
