@@ -5,10 +5,12 @@
 [![Jitpack](https://jitpack.io/v/homayoonahmadi/GroupBoxLayout.svg)](https://jitpack.io/#homayoonahmadi/GroupBoxLayout)
 
 GroupBoxLayout is a container layout that has a title label and draws a rounded border over the parent view. 
-It supports rtl and ltr directions, prevents label text overflow, and is compatible with background color/drawable, 
-because it doesn't use white or other color backgrounds for hiding border under label. 
++ supports rtl and ltr directions
++ prevents label text overflow (by ellipsize the label text)
++ is compatible with background colors or any drawables
++ it doesn't use any white or other color backgrounds for hiding border under the label. 
 
-
+# Screenshots
 ![Preview 1](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/01.jpg)
 ![Preview 2](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/02.jpg)
 ![Preview 3](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/03.jpg)
@@ -118,7 +120,7 @@ binding.root.addView(groupBoxLayout)
 | method                                      | description                                                                                                                 |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | setLabelText(text: String?)                 | This function will set the text of label to be displayed.                                                                   |
-| getLabelText()                              | Return the text that label TextView is displaying.                                                                          |
+| getLabelText()                              | Returns the text that label TextView is displaying.                                                                         |
 | setLabelTextColor(@ColorInt color: Int)     | This function will set text color of label TextView                                                                         |
 | setLabelTextSize(unit: Int, size: Int)      | Set the default label text size to a given unit and value.                                                                  |
 | setLabelStyleResource(@StyleRes resId: Int) | Sets the text style such as color, size, style, hint color, and highlight color from the specified TextAppearance resource. |
