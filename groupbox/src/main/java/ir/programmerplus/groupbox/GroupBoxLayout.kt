@@ -19,7 +19,8 @@ import ir.programmerplus.groupbox.databinding.LayoutGroupBoxBinding
 
 
 /**
- * A {@link MaterialShapeDrawable} that can draw a cutout for the label in outline mode.
+ * The GroupBoxLayout is a container layout view that has a title label and draws a rounded border
+ * over the view
  */
 class GroupBoxLayout : RelativeLayout {
 
@@ -99,7 +100,7 @@ class GroupBoxLayout : RelativeLayout {
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.GroupBoxLayout, defStyleAttr, 0)
 
         val styleResId = attributes.getResourceId(R.styleable.GroupBoxLayout_labelStyle, -1)
-        if (styleResId != -1) setLabelStyleResource(context, styleResId)
+        if (styleResId != -1) setLabelStyleResource(styleResId)
 
         val labelText = attributes.getString(R.styleable.GroupBoxLayout_labelText)
         setLabelText(labelText)
@@ -113,10 +114,12 @@ class GroupBoxLayout : RelativeLayout {
         val strokeColor = attributes.getColor(R.styleable.GroupBoxLayout_borderColor, DEFAULT_COLOR)
         setStrokeColor(strokeColor)
 
-        val strokeWidth = attributes.getDimensionPixelSize(R.styleable.GroupBoxLayout_borderStrokeWidth, dp(DEFAULT_STROKE_WIDTH))
+        val strokeWidth =
+            attributes.getDimensionPixelSize(R.styleable.GroupBoxLayout_borderStrokeWidth, DEFAULT_STROKE_WIDTH.dp())
         setStrokeWidth(strokeWidth)
 
-        val cornerRadius = attributes.getDimensionPixelSize(R.styleable.GroupBoxLayout_borderCornerRadius, dp(DEFAULT_CORNER_RADIUS))
+        val cornerRadius =
+            attributes.getDimensionPixelSize(R.styleable.GroupBoxLayout_borderCornerRadius, DEFAULT_CORNER_RADIUS.dp())
         setCornerRadius(cornerRadius)
 
         attributes.recycle()
@@ -129,6 +132,17 @@ class GroupBoxLayout : RelativeLayout {
     override fun addView(child: View?, index: Int, params: ViewGroup.LayoutParams?) {
         if (this::binding.isInitialized) binding.content.addView(child, index, params)
         else super.addView(child, index, params)
+    }
+
+
+    /**
+     * This method will add set padding to content layout
+     */
+    fun setContentPadding(left: Int, top: Int, right: Int, bottom: Int) {
+        leftPadding = left
+        topPadding = top
+        rightPadding = right
+        bottomPadding = bottom
     }
 
     /**
@@ -162,7 +176,7 @@ class GroupBoxLayout : RelativeLayout {
 
         // configuration of the CutOutDrawable
         drawable = CutoutDrawable(shape).apply {
-            strokeWidth = dp(DEFAULT_STROKE_WIDTH).toFloat()
+            strokeWidth = DEFAULT_STROKE_WIDTH.dp().toFloat()
             strokeColor = ColorStateList.valueOf(DEFAULT_COLOR)
             fillColor = ColorStateList.valueOf(Color.TRANSPARENT)
         }
@@ -232,10 +246,9 @@ class GroupBoxLayout : RelativeLayout {
      * Sets the text style such as color, size, style, hint color, and highlight color
      * from the specified TextAppearance resource.
      *
-     * @param context context
      * @param resId   style resource id
      */
-    fun setLabelStyleResource(context: Context, @StyleRes resId: Int) {
+    fun setLabelStyleResource(@StyleRes resId: Int) {
         @Suppress("DEPRECATION")
         binding.label.setTextAppearance(context, resId)
     }
@@ -271,11 +284,10 @@ class GroupBoxLayout : RelativeLayout {
     /**
      * This function will convert value to dp size
      *
-     * @param value input size value
      * @return value in dp
      */
-    fun dp(value: Float): Int {
-        return (value * resources.displayMetrics.density).toInt()
+    private fun Float.dp(): Int {
+        return (this * resources.displayMetrics.density).toInt()
     }
 
 }
