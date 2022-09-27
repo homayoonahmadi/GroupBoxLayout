@@ -5,12 +5,13 @@
 [![Jitpack](https://jitpack.io/v/homayoonahmadi/GroupBoxLayout.svg)](https://jitpack.io/#homayoonahmadi/GroupBoxLayout)
 
 GroupBoxLayout is a container layout that has a title label and draws a rounded border over the parent view. 
-+ supports rtl and ltr directions
++ supports rtl and ltr directions (using layoutDirection attribute)
 + prevents label text overflow (by ellipsize the label text)
 + is compatible with background colors or any drawables
 + it doesn't use any white or other color backgrounds for hiding border under the label. 
 
-# Screenshots
+# Screenshots:
+
 ![Preview 1](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/01.jpg)
 ![Preview 2](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/02.jpg)
 ![Preview 3](https://github.com/homayoonahmadi/GroupBoxLayout/blob/master/images/03.jpg)
