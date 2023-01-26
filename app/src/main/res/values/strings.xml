@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GroupBox Example</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="hello_world">"Hello World!"</string>
+    <string name="enter_your_login_data">Enter your login data:</string>
 </resources>

@@ -1,8 +1,6 @@
 package ir.programmerplus.groupbox_example
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.TypedValue
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,19 +12,18 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // get sample color
-        val tealColor = ContextCompat.getColor(this@MainActivity, R.color.teal_700)
+        // getting some sample color
+        val tealColor = ContextCompat.getColor(this, R.color.teal_700)
 
-        // create groupbox layout
+        // creating a groupbox layout
         val groupBoxLayout = GroupBoxLayout(this).apply {
-            setLabelText("label text")
-            setLabelTextSize(TypedValue.COMPLEX_UNIT_SP, 15)
+            setLabelText("Label Text")
+            setLabelTextSize(15)
             setLabelTextColor(tealColor)
             setLabelStyleResource(R.style.GroupBoxLabel)
 
@@ -35,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             setCornerRadius(15)
         }
 
-        // set margin
+        // setting layout params and applying margins
         groupBoxLayout.layoutParams = RelativeLayout.LayoutParams(
             RelativeLayout.LayoutParams.MATCH_PARENT,
             RelativeLayout.LayoutParams.WRAP_CONTENT
@@ -43,15 +40,18 @@ class MainActivity : AppCompatActivity() {
             setMargins(5, 5, 5, 5)
         }
 
-        // set padding
+        // setting custom padding
         groupBoxLayout.setContentPadding(20, 20, 20, 20)
 
-        // create simple text view
-        val textView = TextView(this).apply { text = "Hello World!" }
+        // creating a simple text view
+        val textView = TextView(this).apply { text = getString(R.string.hello_world) }
 
-        // add text view to groupbox layout
+        // adding text view to groupbox layout
         groupBoxLayout.addView(textView)
 
         binding.root.addView(groupBoxLayout)
+
+        // removing some view from groupbox layout
+        binding.lytGroupBox.removeView(binding.lytGroupBox.findViewById(R.id.txt_description))
     }
 }

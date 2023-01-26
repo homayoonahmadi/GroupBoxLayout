@@ -1,4 +1,4 @@
-@file:Suppress("MemberVisibilityCanBePrivate")
+@file:Suppress("MemberVisibilityCanBePrivate", "unused")
 
 package ir.programmerplus.groupbox
 
@@ -134,6 +134,15 @@ class GroupBoxLayout : RelativeLayout {
         else super.addView(child, index, params)
     }
 
+    /**
+     * This overridden method will remove views from content layout to make sure that layout will perform
+     * as a container layout
+     */
+    override fun removeView(view: View?) {
+        if (this::binding.isInitialized) binding.content.removeView(view)
+        else super.removeView(view)
+    }
+
 
     /**
      * This method will add set padding to content layout
@@ -240,6 +249,15 @@ class GroupBoxLayout : RelativeLayout {
      */
     fun setLabelTextSize(unit: Int, size: Int) {
         binding.label.setTextSize(unit, size.toFloat())
+    }
+
+    /**
+     * Set the default label text size to a given value.
+     *
+     * @param size The desired size in SP unit.
+     */
+    fun setLabelTextSize(size: Int) {
+        binding.label.setTextSize(TypedValue.COMPLEX_UNIT_SP, size.toFloat())
     }
 
     /**
