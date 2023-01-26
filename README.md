@@ -32,7 +32,7 @@ Step 2. Add the dependency
 
 ```groovy
 dependencies {
-    implementation 'com.github.homayoonahmadi:GroupBoxLayout:1.1'
+    implementation 'com.github.homayoonahmadi:GroupBoxLayout:1.2.0'
 }
 ```
 
@@ -85,7 +85,7 @@ val tealColor = ContextCompat.getColor(this@MainActivity, R.color.teal_700)
 // create groupbox layout
 val groupBoxLayout = GroupBoxLayout(this).apply {
     setLabelText("label text")
-    setLabelTextSize(TypedValue.COMPLEX_UNIT_SP, 15)
+    setLabelTextSize(15)
     setLabelTextColor(tealColor)
     setLabelStyleResource(R.style.GroupBoxLabel)
 
